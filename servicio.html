@@ -51,6 +51,19 @@
             <a href="#" class="nav-link active text-white text-lg font-medium">Servicios</a>
             <a href="contacto.html" class="nav-link text-white text-lg font-medium">Contacto</a>
         </nav>
+        <nav class="hidden md:flex space-x-10">
+            <a href="index.html" class="nav-link active text-white text-lg font-medium">Inicio</a>
+            <a href="sobre_nosotros.html" class="nav-link text-white text-lg font-medium">Sobre nosotros</a> 
+            <a href="servicio.html" class="nav-link text-white text-lg font-medium">Servicios</a>
+            <a href="contacto.html" class="nav-link text-white text-lg font-medium">Contacto</a>
+        </nav>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[rgba(8,8,44,0.95)] flex flex-col items-center py-6 space-y-6 md:hidden border-t border-gray-700">
+            <a href="index.html" class="text-white text-lg font-medium">Inicio</a>
+            <a href="sobre_nosotros.html" class="text-white text-lg font-medium">Sobre nosotros</a> 
+            <a href="servicio.html" class="text-white text-lg font-medium">Servicios</a>
+            <a href="contacto.html" class="text-white text-lg font-medium">Contacto</a>
+        </div>
     </header>
 
     <section class="services-hero-bg min-h-[400px] flex flex-col items-center justify-center text-center px-6 pt-32 pb-20">
@@ -116,6 +129,22 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 
 </body>
 </html>
